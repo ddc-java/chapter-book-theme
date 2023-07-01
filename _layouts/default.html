@@ -110,15 +110,15 @@
                   {%- endif -%}
                 {%- endunless -%}
                 {{ site.copyright.owner.name }}
-                {%- if site.copyright.owner.url -%}
-                  </a>
-                {%- endif %}
-                All rights reserved.
                 {%- unless site.copyright.page.url -%}
-                  {%- if site.copyright.page.url -%}
+                  {%- if site.copyright.owner.url -%}
                     </a>
                   {%- endif -%}
                 {%- endunless -%}
+                All rights reserved.
+                {%- if site.copyright.page.url -%}
+                  </a>
+                {%- endif -%}
               {% endif %}
             </div>
           {% endif %}
