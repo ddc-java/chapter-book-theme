@@ -85,7 +85,8 @@
               {% if site.author %}
                 Written by 
                 {% if site.author.url %}
-                  <a href="{{ site.author.url | relative_url }}" target="_blank">
+                  <a href="{{ site.author.url | relative_url }}" 
+                      target="_blank" rel="noopener noreferrer">
                 {% endif %}
                 {{ site.author.name }}
                 {%- if site.author.url -%}
@@ -106,7 +107,8 @@
                 {{ latest_year }}
                 {% unless site.copyright.page.url -%}
                   {% if site.copyright.owner.url -%}
-                    <a href="{{ site.copyright.owner.url | relative_url }}" target="_blank">
+                    <a href="{{ site.copyright.owner.url | relative_url }}" 
+                        target="_blank" rel="noopener noreferrer">
                   {%- endif -%}
                 {%- endunless -%}
                 {{ site.copyright.owner.name }}
