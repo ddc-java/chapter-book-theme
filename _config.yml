@@ -1,7 +1,8 @@
 title: DDC Book Theme
 longtitle: "Book theme for long-form curriculum content used in the Deep Dive Java+Android Bootcamp"
-author: Nick Bennett
-email: nick@nickbenn.com
+author: 
+  name: Nick Bennett
+  url: nick@nickbenn.com
 description: >
   A theme based on GitBook and Jekyll Chapterbook with support for chapters and parts.
 
@@ -16,8 +17,8 @@ baseurl_canonical: https://ddc-java.github.io/chapter-book-theme
 # Set a start_year to have the copyright render as "start_year - current_year" (if the years are different)
 # Set copyright: false to disable.
 copyright:
-  start_year: 2023
-  url: /book.html
+  owner: CNMI Ingenuity, Inc.
+  url: https://cnmingenuity.org/
 
 # Customize the link favicon in header. Will be {{site.baseurl}}/{{site.favicon_path}}
 favicon_path: assets/gitbook/images/favicon.ico
