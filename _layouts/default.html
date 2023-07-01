@@ -108,7 +108,7 @@
                   {% if site.copyright.owner.url -%}
                     <a href="{{ site.copyright.owner.url | relative_url }}" target="_blank">
                   {%- endif -%}
-                {%- unless -%}
+                {%- endunless -%}
                 {{ site.copyright.owner.name }}
                 {%- if site.copyright.owner.url -%}
                   </a>
@@ -118,7 +118,7 @@
                   {%- if site.copyright.page.url -%}
                     </a>
                   {%- endif -%}
-                {%- unless -%}
+                {%- endunless -%}
               {% endif %}
             </div>
           {% endif %}
