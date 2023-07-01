@@ -67,7 +67,7 @@
             <div class="bottom-nav">
               {% for item in site.bottom_nav %}
                 {% unless forloop.first %}
-                  -
+                  &bull;
                 {% endunless %}
                 {% assign item_url = item.url %}
                 {% assign starts_with = item_url | slice: 0, 4 %}
@@ -95,13 +95,14 @@
               {% endif %}
               {% if site.copyright %}
                 {% assign latest_year = "now" | date: "%Y" %}
-                {% capture copyright_start_year %}{{ site.copyright.start_year }}{% endcapture %}
-                {% if site.copyright.url %}
-                  <a href="{{ site.baseurl }}{{ site.copyright.url }}">
-                {% endif %}
+                {% assign start_year = site.copyright.start_year %}
+                {% if site.copyright.url -%}
+                  <a href="{{ site.copyright.url | relative_url }}">
+                {%- endif -%}
                 &copy;
-                {% if copyright_start_year and copyright_start_year != latest_year %}
-                  {{ copyright_start_year }}-{% endif %}
+                {% if start_year and start_year != latest_year %}
+                  {{ start_year }}&ndash;
+                {%- endif %}
                 {{ latest_year }}
                 {{ site.copyright.owner }}
                 {% if site.copyright.url %}
