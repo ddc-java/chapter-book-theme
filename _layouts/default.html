@@ -100,21 +100,25 @@
                 &copy;
                 {% assign latest_year = "now" | date: "%Y" %}
                 {% assign start_year = site.copyright.start_year %}
-                {%- if start_year and start_year != latest_year %}
+                {%- if start_year and start_year != latest_year -%}
                   {{ start_year }}&ndash;
-                {%- endif %}
-                {{ latest_year }}
-                {% if site.copyright.owner.url -%}
-                  <a href="{{ site.copyright.owner.url | relative_url }}" target="_blank">
                 {%- endif -%}
+                {{ latest_year }}
+                {% unless site.copyright.page.url -%}
+                  {% if site.copyright.owner.url -%}
+                    <a href="{{ site.copyright.owner.url | relative_url }}" target="_blank">
+                  {%- endif -%}
+                {%- unless -%}
                 {{ site.copyright.owner.name }}
                 {%- if site.copyright.owner.url -%}
                   </a>
                 {%- endif %}
                 All rights reserved.
-                {%- if site.copyright.page.url -%}
-                  </a>
-                {%- endif %}
+                {%- unless site.copyright.page.url -%}
+                  {%- if site.copyright.page.url -%}
+                    </a>
+                  {%- endif -%}
+                {%- unless -%}
               {% endif %}
             </div>
           {% endif %}
