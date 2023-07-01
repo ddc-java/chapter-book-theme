@@ -85,15 +85,18 @@
               {% if site.author %}
                 Written by 
                 {% if site.author.url %}
-                  <a href="{{ site.author.url | relative_url }}">
+                  <a href="{{ site.author.url | relative_url }}" target="_blank">
                 {% endif %}
                 {{ site.author.name }}
-                {%- if site.author.url %}
+                {%- if site.author.url -%}
                   </a>
-                {% endif -%}
+                {%- endif -%}
                 .
               {% endif %}
               {% if site.copyright %}
+                {% if site.copyright.page.url -%}
+                  <a href="{{ site.copyright.page.url | relative_url }}">
+                {%- endif -%}
                 &copy;
                 {% assign latest_year = "now" | date: "%Y" %}
                 {% assign start_year = site.copyright.start_year %}
@@ -101,14 +104,17 @@
                   {{ start_year }}&ndash;
                 {%- endif %}
                 {{ latest_year }}
-                {% if site.copyright.url -%}
-                  <a href="{{ site.copyright.url | relative_url }}">
+                {% if site.copyright.owner.url -%}
+                  <a href="{{ site.copyright.owner.url | relative_url }}" target="_blank">
                 {%- endif -%}
-                {{ site.copyright.owner }}
-                {%- if site.copyright.url -%}
+                {{ site.copyright.owner.name }}
+                {%- if site.copyright.owner.url -%}
                   </a>
                 {%- endif %}
                 All rights reserved.
+                {%- if site.copyright.page.url -%}
+                  </a>
+                {%- endif %}
               {% endif %}
             </div>
           {% endif %}

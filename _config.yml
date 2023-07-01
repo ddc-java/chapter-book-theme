@@ -17,8 +17,11 @@ baseurl_canonical: https://ddc-java.github.io/chapter-book-theme
 # Set a start_year to have the copyright render as "start_year - current_year" (if the years are different)
 # Set copyright: false to disable.
 copyright:
-  owner: CNMI Ingenuity, Inc.
-  url: https://cnmingenuity.org/
+  owner: 
+    name: CNMI Ingenuity, Inc.
+    url: https://cnmingenuity.org/
+  page: 
+    url: /book.html
 
 # Customize the link favicon in header. Will be {{site.baseurl}}/{{site.favicon_path}}
 favicon_path: assets/gitbook/images/favicon.ico
