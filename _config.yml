@@ -20,8 +20,8 @@ copyright:
   owner: 
     name: CNMI Ingenuity, Inc.
     url: https://cnmingenuity.org/
-  page: 
-    url: /book.html
+#  page: 
+#    url: /copyright.html
 
 # Customize the link favicon in header. Will be {{site.baseurl}}/{{site.favicon_path}}
 favicon_path: assets/gitbook/images/favicon.ico
