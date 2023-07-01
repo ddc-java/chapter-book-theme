@@ -83,19 +83,19 @@
           {% if site.copyright or site.author %}
             <div class="copyright">
               {% if site.author %}
+                Written by 
                 {% if site.author.url %}
                   <a href="{{ site.author.url | relative_url }}">
                 {% endif %}
                 {{ site.author.name }}
-                {% if site.author.url %}
+                {%- if site.author.url %}
                   </a>
-                {% endif %}
-                All rights reserved.
+                {% endif -%}
+                .
               {% endif %}
               {% if site.copyright %}
                 {% assign latest_year = "now" | date: "%Y" %}
-                {% capture copyright_start_year %}
-                  {{ site.copyright.start_year }}{% endcapture %}
+                {% capture copyright_start_year %}{{ site.copyright.start_year }}{% endcapture %}
                 {% if site.copyright.url %}
                   <a href="{{ site.baseurl }}{{ site.copyright.url }}">
                 {% endif %}

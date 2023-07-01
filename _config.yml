@@ -1,7 +1,7 @@
 title: DDC Book Theme
 longtitle: "Book theme for long-form curriculum content used in the Deep Dive Java+Android Bootcamp"
 author: 
-  name: Nick Bennett
+  name: mailto:Nick Bennett
   url: nick@nickbenn.com
 description: >
   A theme based on GitBook and Jekyll Chapterbook with support for chapters and parts.
