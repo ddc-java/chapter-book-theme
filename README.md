@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Jekyll Chapterbook Theme
+title: Chapter Book Theme
 permalink: /
 ---
 
@@ -15,18 +15,7 @@ which in turn is based on an early theme of [GitBook](https://www.gitbook.com/).
 
 ### Demo on GitHub pages
 
-[jasongrimes.github.io/jekyll-chapterbook/](https://jasongrimes.github.io/jekyll-chapterbook/)
-
-Also see its 
-[GitHub repo](https://github.com/jasongrimes/jekyll-chapterbook).
-
-### Example live site
-
-A live site with a more complex configuration can be seen at 
-[fretboardfoundation.com](https://fretboardfoundation.com).
-
-Also see its 
-[GitHub repo](https://github.com/jasongrimes/fretboardfoundation).
+<https://ddc-java.github.io/chapter-book-theme/>
 
 ## Why this theme
 
@@ -58,13 +47,13 @@ For example, you could:
 and then copy in the configuration from  [`jekyll-chapterbook/_config.yml`](https://github.com/jasongrimes/jekyll-chapterbook/blob/master/_config.yml).
 
 ```yaml
-remote_theme: jasongrimes/jekyll-chapterbook
+remote_theme: ddc-java/chapter-book-theme@main
 ```
 
 ### Create some chapters
 
 Each chapter is written in its own [Jekyll page](https://jekyllrb.com/docs/pages/),
-and stored in the [`_chapters/`](https://github.com/jasongrimes/jekyll-chapterbook/tree/master/_chapters) directory.
+and stored in the [`_chapters/`](https://github.com/ddc-java/chapter-book-theme/tree/main/_chapters) directory.
 
 Name your chapters something like `010-my-chapter.md`, `020-my-next-chapter.md`, etc.
 (The numbers are used to list chapters in the desired order.
