@@ -14,7 +14,7 @@ layout: default
   <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
     <ul>
       {% if site.bookcrumbs.book_url %}
-        {% assign book_url = site.bookcrumbs.book_url | default: '/book.html' | relative_url }}
+        {% assign book_url = site.bookcrumbs.book_url | default: '/book.html' | relative_url %}
         <li>
           {% unless book_url == page.url %}  
             <a href="{{ book_url }}">
@@ -32,7 +32,9 @@ layout: default
       {% endif %}
 
       {% if site.bookcrumbs.contents_url %}
-        {% assign contents_url = site.bookcrumbs.contents_url | default: '/contents.html' | relative_url }}
+        {% assign contents_url = site.bookcrumbs.contents_url 
+            | default: '/contents.html' 
+            | relative_url }}
         <li {% if contents_url == page.url %}class="no-arrow"{% endif %}>
           {% if contents_url != page.url %}
             <a href="{{ contents_url }}">

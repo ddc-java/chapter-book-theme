@@ -91,8 +91,10 @@
                 .
               {% endif %}
               {% if site.copyright != false %}
-                {%- assign copyright_owner_name = site.copyright.owner.name | default: 'CNM Ingenuity, Inc.' -%}
-                {%- assign copyright_owner_url = site.copyright.owner.url | default: 'https://cnmingenuity.org/' -%}
+                {%- assign copyright_owner_name = site.copyright.owner.name 
+                    | default: 'CNM Ingenuity, Inc.' -%}
+                {%- assign copyright_owner_url = site.copyright.owner.url 
+                    | default: 'https://cnmingenuity.org/' -%}
                 {% if site.copyright.page.url -%}
                   <a href="{{ site.copyright.page.url | relative_url }}">
                 {%- endif -%}
