@@ -28,20 +28,24 @@
   {% assign copyright_page_url = site.copyright.page.url | relative_url %}
 {% endif %}
 
+{% assign latest_year = "now" | date: "%Y" %}
+{% assign start_year = site.copyright.start_year %}
+
+{% capture copyright_year_range -%}
+  {%- if start_year and start_year != latest_year -%}
+    {{ start_year }}&ndash;
+  {%- endif -%}
+  {{ latest_year }}
+{%- endcapture %}
+
 {% capture copyright_link %}
   {%- if site.copyright != false -%}
     {%- if copyright_page_url -%}
       <a href="{{ copyright_page_url }}">
     {%- endif -%}
-    &copy;
-    {% assign latest_year = "now" | date: "%Y" %}
-    {% assign start_year = site.copyright.start_year %}
-    {%- if start_year and start_year != latest_year -%}
-      {{ start_year }}&ndash;
-    {%- endif -%}
-    {{ latest_year }}
-    {% unless copyright_page_url -%}
-      {% if copyright_owner_url -%}
+    &copy; {{ copyright_year_range }}&nbsp;
+    {%- unless copyright_page_url -%}
+      {%- if copyright_owner_url -%}
         <a href="{{ copyright_owner_url }}" target="_blank">
       {%- endif -%}
     {%- endunless -%}
@@ -50,8 +54,8 @@
       {%- if copyright_owner_url -%}
         </a>
       {%- endif -%}
-    {%- endunless %}
-    All rights reserved.
+    {%- endunless -%}
+    &nbsp;All rights reserved.
     {%- if copyright_page_url -%}
       </a>
     {%- endif -%}
