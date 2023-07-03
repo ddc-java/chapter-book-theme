@@ -34,7 +34,7 @@ layout: default
       {% if site.bookcrumbs.contents_url %}
         {% assign contents_url = site.bookcrumbs.contents_url 
             | default: '/contents.html' 
-            | relative_url }}
+            | relative_url %}
         <li {% if contents_url == page.url %}class="no-arrow"{% endif %}>
           {% if contents_url != page.url %}
             <a href="{{ contents_url }}">
