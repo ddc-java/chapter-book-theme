@@ -24,7 +24,7 @@ baseurl_canonical: https://ddc-java.github.io/chapter-book-theme
 #    url: /copyright.html
 
 # Customize the link favicon in header.
-# favicon_path: /assets/gitbook/images/favicon.ico
+# favicon_path: /assets/ddc/images/favicon.ico
 
 #
 # Navigation menus
@@ -36,7 +36,7 @@ baseurl_canonical: https://ddc-java.github.io/chapter-book-theme
 # bookcrumbs:
 #   book_url: /book.html
 #   contents_url: /contents.html
-#   book_icon: /assets/gitbook/images/ddc.png
+#   book_icon: /assets/ddc/images/ddc.png
 
 # Links shown above the TOC in the sidebar
 # All "url" variables should have a leading slash.
