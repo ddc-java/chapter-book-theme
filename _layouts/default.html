@@ -76,52 +76,12 @@
             </div>
           {% endif %}
 
-          {% if site.copyright != false or site.author %}
+          {% include copyright-vars.html %}
+          
+          {% if copyright_link or author_link %}
             <div class="copyright">
-              {% if site.author %}
-                Written by 
-                {% if site.author.url %}
-                  <a href="{{ site.author.url | relative_url }}" 
-                      target="_blank" rel="noopener noreferrer">
-                {% endif %}
-                {{ site.author.name }}
-                {%- if site.author.url -%}
-                  </a>
-                {%- endif -%}
-                .
-              {% endif %}
-              {% if site.copyright != false %}
-                {%- assign copyright_owner_name = site.copyright.owner.name 
-                    | default: 'CNM Ingenuity, Inc.' -%}
-                {%- assign copyright_owner_url = site.copyright.owner.url 
-                    | default: 'https://cnmingenuity.org/' -%}
-                {% if site.copyright.page.url -%}
-                  <a href="{{ site.copyright.page.url | relative_url }}">
-                {%- endif -%}
-                &copy;
-                {% assign latest_year = "now" | date: "%Y" %}
-                {% assign start_year = site.copyright.start_year %}
-                {%- if start_year and start_year != latest_year -%}
-                  {{ start_year }}&ndash;
-                {%- endif -%}
-                {{ latest_year }}
-                {% unless site.copyright.page.url -%}
-                  {% if copyright_owner_url -%}
-                    <a href="{{ copyright_owner_url | relative_url }}" 
-                        target="_blank" rel="noopener noreferrer">
-                  {%- endif -%}
-                {%- endunless -%}
-                {{ copyright_owner_name }}
-                {%- unless site.copyright.page.url -%}
-                  {%- if copyright_owner_url -%}
-                    </a>
-                  {%- endif -%}
-                {%- endunless %}
-                All rights reserved.
-                {%- if site.copyright.page.url -%}
-                  </a>
-                {%- endif -%}
-              {% endif %}
+              {{ author_link }}
+              {{ copyright_link }}
             </div>
           {% endif %}
 
