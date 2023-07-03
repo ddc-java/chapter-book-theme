@@ -14,7 +14,7 @@ layout: default
   <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
     <ul>
       {% assign book_url = site.bookcrumbs.book_url 
-          | default: '/book.html' 
+          | default: '/index.html' 
           | relative_url %}
       <li>
         {% unless book_url == page.url %}  

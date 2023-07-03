@@ -34,7 +34,7 @@ baseurl_canonical: https://ddc-java.github.io/chapter-book-theme
 # The book and contents pages need to be made manually.
 # All "url" variables should have a leading slash.
 # bookcrumbs:
-#   book_url: /book.html
+#   book_url: /index.html
 #   contents_url: /contents.html
 #   book_icon: /assets/ddc/images/ddc.png
 
