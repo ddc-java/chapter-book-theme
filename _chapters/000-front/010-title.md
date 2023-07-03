@@ -6,10 +6,9 @@ abstract: An example book for showcasing the Jekyll Chapterbook theme.
 
 {% include copyright-vars.html %}
 
-{% if copyright_link or author_link %}
-  {{ author_link }}
-  {{ copyright_link }}
-{% endif %}
+{% if copyright_link or author_link -%}
+  {{ author_link }} {{ copyright_link }}
+{%- endif %}
 
 Last updated: {{ "now" | date: "%B %e, %Y" }}
 
