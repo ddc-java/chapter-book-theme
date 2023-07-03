@@ -6,9 +6,7 @@
 
         {% if site.sidebar_nav_top %}
           {% for item in site.sidebar_nav_top %}
-            {% assign item_url = item.url %}
-            {% assign starts_with = item_url | slice: 0,4 %}
-            {% if starts_with != "http" %}{% assign item_url = item_url | prepend: site.baseurl %}{% endif %}
+            {% assign item_url = item.url | relative_url %}
             <li class="chapter {% if item.url == page.url %}active{% endif %}">
               <a href="{{ item_url }}" class="">{{ item.label }}</a>
             </li>
@@ -41,7 +39,7 @@
           {% if i_part_folder and i_part_folder != i_prev_part_folder and i_part_unnumbered == false %}
             <li class="header {% if i_part_is_draft %}draft{% endif %}">
               {% if i_chapter_is_part_index %}
-                <a href="{{site.baseurl}}{{i_chapter.url}}">
+                <a href="{{ i_chapter.url | relative_url }}">
               {% endif %}
               Part {{ i_part_num }}: {{ i_part_label }}
               {% if i_chapter_is_part_index %}
@@ -61,7 +59,7 @@
             <li class="chapter {%if i_chapter_is_draft %}draft{%endif%}">
           {% endif %}
 
-            <a href="{{site.baseurl}}{{i_chapter.url}}">
+            <a href="{{ i_chapter.url | relative_url }}">
               {% if i_chapter_num %}
                 {{ i_chapter_num }}.
               {% endif %}
@@ -81,11 +79,8 @@
         {% if site.sidebar_nav_bottom %}
           <li class="divider"></li>
           {% for item in site.sidebar_nav_bottom %}
-            {% assign item_url = item.url %}
-            {% assign starts_with = item_url | slice: 0,4 %}
-            {% if starts_with != "http" %}{% assign item_url = item_url | prepend: site.baseurl %}{% endif %}
             <li class="chapter {% if item.url == page.url %}active{% endif %}">
-              <a href="{{item_url}}" class="">{{ item.label }}</a>
+              <a href="{{ item.url | relative_url }}" class="">{{ item.label }}</a>
             </li>
           {% endfor %}
         {% endif %}

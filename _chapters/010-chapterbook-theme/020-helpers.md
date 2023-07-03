@@ -57,7 +57,7 @@ See example [draft outline](outline.html), rendered with:
 The `figure.html` helper renders images as figures in the book.
 
 Parameters:
-- `url`: The relative URL to the image (appended to `site.baseurl`).
+- `url`: The relative URL to the image.
 - `caption`: An optional caption to render beneath the figure.
 - `class`: an optional `class` attribute to add to the the HTML `<figure>` tag.
 

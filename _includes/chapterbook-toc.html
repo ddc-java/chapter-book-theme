@@ -35,7 +35,7 @@
       <li class="part">
         <div class="part-label">
           {% if i_chapter_is_part_index %}
-            <a href="{{site.baseurl}}{{i_chapter.url}}">
+            <a href="{{ i_chapter.url | relative_url }}">
           {% endif %}
           Part {{ i_part_num }}: {{ i_part_label }}
           {% if i_chapter_is_part_index %}
@@ -48,7 +48,7 @@
 
     {% unless i_chapter_is_part_index %}
       <li class="chapter {% if include.show_drafts %}{% if i_chapter_is_draft %}draft{% else %}not-draft{% endif %}{% endif %}">
-        <a href="{{site.baseurl}}{{ i_chapter.url }}">
+        <a href="{{ i_chapter.url | relative_url }}">
           <div class="chapter-label">
             {% unless i_part_unnumbered %}
               <span class="chapter-num">Chapter {{ i_chapter_num }}.</span>

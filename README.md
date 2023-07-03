@@ -382,9 +382,9 @@ specify the urls in `bookcrumbs` in [_config.yml](https://github.com/jasongrimes
 
 ```yaml
 bookcrumbs:
-  book_url: book.html
-  contents_url: contents.html
-  book_icon: assets/gitbook/images/apple-touch-icon-precomposed-152.png
+  book_url: /book.html
+  contents_url:/ contents.html
+  book_icon: /assets/gitbook/images/ddc.png
 ```
 
 ## Include "helpers"
@@ -438,7 +438,7 @@ and [draft outline](https://jasongrimes.github.io/jekyll-chapterbook/outline.htm
 The `figure.html` helper renders images as figures in the book.
 
 Parameters:
-- `url`: The relative URL to the image (appended to `site.baseurl`).
+- `url`: The relative URL to the image.
 - `caption`: An optional caption to render beneath the figure.
 - `class`: an optional `class` attribute to add to the the HTML `<figure>` tag.
 

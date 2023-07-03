@@ -11,13 +11,13 @@
 
     {% if page.collection == "chapters" %}
       {% if page_prev_chapter %}
-        <link rel="prev" href="{{site.baseurl}}{{page_prev_chapter.url}}" />
+        <link rel="prev" href="{{ page_prev_chapter.url | relative_url }}" />
       {% else %}
-        <link rel="prev" href="{{site.baseurl}}/index.html" />
+        <link rel="prev" href="{{ '/index.html' | relative_url }}" />
       {% endif %}
 
       {% if page_next_chapter %}
-        <link rel="next" href="{{site.baseurl}}{{page_next_chapter.url}}" />
+        <link rel="next" href="{{ page_next_chapter.url | relative_url }}" />
       {% endif %}
     {% endif %}
 
@@ -38,7 +38,7 @@
             </a>
           {% endif %}
           <h1>
-            <a href="{{site.baseurl}}/index.html">{{ site.title | escape }}</a>
+            <a href="{{ '/index.html' | relative_url }}">{{ site.title | escape }}</a>
           </h1>
         </div>
         <!-- .book-header -->
@@ -69,18 +69,14 @@
                 {% unless forloop.first %}
                   &bull;
                 {% endunless %}
-                {% assign item_url = item.url %}
-                {% assign starts_with = item_url | slice: 0, 4 %}
-                {% if starts_with != "http" %}
-                  {% assign item_url = item_url | prepend: site.baseurl %}{% endif %}
-                <a href="{{ item_url }}">
+                <a href="{{ item.url | relative_url }}">
                   {{ item.label }}
                 </a>
               {% endfor %}
             </div>
           {% endif %}
 
-          {% if site.copyright or site.author %}
+          {% if site.copyright != false or site.author %}
             <div class="copyright">
               {% if site.author %}
                 Written by 
@@ -94,7 +90,9 @@
                 {%- endif -%}
                 .
               {% endif %}
-              {% if site.copyright %}
+              {% if site.copyright != false %}
+                {%- assign copyright_owner_name = site.copyright.owner.name | default: 'CNM Ingenuity, Inc.' -%}
+                {%- assign copyright_owner_url = site.copyright.owner.url | default: 'https://cnmingenuity.org/' -%}
                 {% if site.copyright.page.url -%}
                   <a href="{{ site.copyright.page.url | relative_url }}">
                 {%- endif -%}
@@ -106,14 +104,14 @@
                 {%- endif -%}
                 {{ latest_year }}
                 {% unless site.copyright.page.url -%}
-                  {% if site.copyright.owner.url -%}
-                    <a href="{{ site.copyright.owner.url | relative_url }}" 
+                  {% if copyright_owner_url -%}
+                    <a href="{{ copyright_owner_url | relative_url }}" 
                         target="_blank" rel="noopener noreferrer">
                   {%- endif -%}
                 {%- endunless -%}
-                {{ site.copyright.owner.name }}
+                {{ copyright_owner_name }}
                 {%- unless site.copyright.page.url -%}
-                  {%- if site.copyright.owner.url -%}
+                  {%- if if copyright_owner_url -%}
                     </a>
                   {%- endif -%}
                 {%- endunless %}

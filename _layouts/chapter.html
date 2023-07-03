@@ -6,30 +6,37 @@ layout: default
 
 {% if page_chapter_is_draft %}
   <div class="markdown-section color-callout-light with-border" style="padding: 5px; padding-left: 10px; font-size: 16px; margin-bottom: 20px;">
-    This chapter is a
-    <b>draft</b>.
-    <a href="{{site.baseurl}}/outline.html">See the outline.</a>
+    This chapter is a <b>draft</b>.
+    <a href="{{ '/outline.html' | relative_url }}">See the outline.</a>
   </div>
 {% endif %}
 
   <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
     <ul>
       {% if site.bookcrumbs.book_url %}
-        {% capture book_url %}{{site.baseurl}}{{site.bookcrumbs.book_url}}{% endcapture %}
-          <li>
-            {% unless book_url == page.url %}  
-              <a href="{{ book_url }}">
-            {% endunless %}
-              {% if site.bookcrumbs.book_icon %}<img class="book-icon" src="{{site.baseurl}}/{{ site.bookcrumbs.book_icon }}">{% endif %}
-              Book
-            {% unless book_url == page.url %}
-              </a>
-            {% endunless %}
-          </li>
+        {% assign book_url = site.bookcrumbs.book_url 
+            | default: '/book.html'
+            | relative_url }}
+        <li>
+          {% unless book_url == page.url %}  
+            <a href="{{ book_url }}">
+          {% endunless %}
+          {% if site.bookcrumbs.book_icon -%}
+            <img class="book-icon" src="{{ site.bookcrumbs.book_icon 
+                | default: '/assets/gitbook/images/ddc.png' 
+                | relative_url }}">
+          {%- endif %}
+            Book
+          {% unless book_url == page.url %}
+            </a>
+          {% endunless %}
+        </li>
       {% endif %}
 
       {% if site.bookcrumbs.contents_url %}
-        {% capture contents_url %}{{site.baseurl}}{{site.bookcrumbs.contents_url}}{% endcapture %}
+        {% assign contents_url = site.bookcrumbs.contents_url 
+            | default: '/contents.html'
+            | relative_url }}
         <li {% if contents_url == page.url %}class="no-arrow"{% endif %}>
           {% if contents_url != page.url %}
             <a href="{{ contents_url }}">
@@ -54,7 +61,7 @@ layout: default
             {% unless page_part_unnumbered %}
               <li class="breadcrumb-part">
                 {% if page_part_index_chapter %}
-                  <a href="{{ site.baseurl }}{{ page_part_index_chapter.url }}">
+                  <a href="{{ page_part_index_chapter.url | relative_url }}">
                 {% endif %}
                 Part {{ page_part_num }}: {{ page_part_label }}
                 {% if page_part_index_chapter %}
@@ -128,11 +135,11 @@ layout: default
         {% assign next_title = page_next_chapter.title %}
       {% endif %}
       <a
-        href="{{site.baseurl}}{{ page_next_chapter.url }}"
+        href="{{ page_next_chapter.url | relative_url }}"
         class="chapter-next {% unless page_prev_chapter %}pager-unique{% endunless %}"
         aria-label="Next page: {{ next_title | escape }}"
         data-level="1.1"
-        data-path="{{site.baseurl}}{{ page_next_chapter.url }}">
+        data-path="{{ page_next_chapter.url | relative_url }}">
         <div class="pager-arrow">
           <i class="fa fa-arrow-right"></i>
         </div>
@@ -163,11 +170,11 @@ layout: default
         {% assign prev_title = page_prev_chapter.title %}
       {% endif %}
       <a
-        href="{{site.baseurl}}{{ page_prev_chapter.url }}"
+        href="{{ page_prev_chapter.url | relative_url }}"
         class="chapter-prev {% unless page_next_chapter %}pager-unique{% endunless %}"
         aria-label="Previous page: {{ prev_title | escape }}"
         data-level="1.1"
-        data-path="{{site.baseurl}}{{ page_prev_chapter.url }}">
+        data-path="{{ page_prev_chapter.url | relative_url }}">
         <div class="pager-arrow">
           <i class="fa fa-arrow-left"></i>
         </div>
