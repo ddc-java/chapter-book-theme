@@ -6,13 +6,15 @@
 
 {% if author_name %}
   {% capture author_link -%}
-    {%- if author_url -%}
+    Written by
+    {% if author_url -%}
       <a href="{{ author.url }}" target="_blank" rel="noopener noreferrer">
     {%- endif -%}
     {{ author_name }}
     {%- if author_url -%}
       </a>
     {%- endif -%}
+    .
   {%- endcapture %}
 {% endif %}
 
