@@ -15,29 +15,33 @@ layout: default
     <ul>
       {% assign book_url = site.bookcrumbs.book_url 
           | default: '/index.html' %}
-      <li>
-        {% unless book_url == page.url %}  
-          <a href="{{ book_url | relative_url }}">
-        {% endunless %}
-            <img class="book-icon" src="{{ site.bookcrumbs.book_icon 
-                | default: '/assets/ddc/images/ddc.png' 
-                | relative_url }}"> Book
-        {% unless book_url == page.url %}
-          </a>
-        {% endunless %}
-      </li>
+      {% if book_url %}
+        <li>
+          {% unless book_url == page.url %}  
+            <a href="{{ book_url | relative_url }}">
+          {% endunless %}
+              <img class="book-icon" src="{{ site.bookcrumbs.book_icon 
+                  | default: '/assets/ddc/images/ddc.png' 
+                  | relative_url }}"> Home
+          {% unless book_url == page.url %}
+            </a>
+          {% endunless %}
+        </li>
+      {% endif %}
 
       {% assign contents_url = site.bookcrumbs.contents_url 
           | default: '/contents.html' %}
-      <li {% if contents_url == page.url %}class="no-arrow"{% endif %}>
-        {% if contents_url != page.url %}
-          <a href="{{ contents_url | relative_url }}">
-        {% endif %}
-          Contents
-        {% if contents_url != page.url %}
-          </a>
-        {% endif %}
-      </li>
+      {% if contents_url %}
+        <li {% if contents_url == page.url %}class="no-arrow"{% endif %}>
+          {% if contents_url != page.url %}
+            <a href="{{ contents_url | relative_url }}">
+          {% endif %}
+            Contents
+          {% if contents_url != page.url %}
+            </a>
+          {% endif %}
+        </li>
+      {% endif %}
 
       {% if page_chapter_is_part_index and page_part_num%}
         <li class="breadcrumb-part no-arrow">
