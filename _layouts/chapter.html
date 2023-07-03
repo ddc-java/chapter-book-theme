@@ -13,8 +13,9 @@ layout: default
 
   <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
     <ul>
-      {% assign book_url = site.bookcrumbs.book_url 
-          | default: '/index.html' %}
+      {% if site.bookcrumbs.book_url != empty and site.bookcrumbs.book_url != false %}
+        {% assign book_url = site.bookcrumbs.book_url | default: '/index.html' %}
+      {% endif %}
       {% if book_url %}
         <li>
           {% unless book_url == page.url %}  
@@ -29,8 +30,9 @@ layout: default
         </li>
       {% endif %}
 
-      {% assign contents_url = site.bookcrumbs.contents_url 
-          | default: '/contents.html' %}
+      {% if site.bookcrumbs.contents_url != empty and site.bookcrumbs.contents_url != false %}
+        {% assign contents_url = site.bookcrumbs.contents_url | default: '/contents.html' %}
+      {% endif %}
       {% if contents_url %}
         <li {% if contents_url == page.url %}class="no-arrow"{% endif %}>
           {% if contents_url != page.url %}
