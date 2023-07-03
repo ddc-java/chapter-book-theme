@@ -37,7 +37,8 @@
           {% endunless %}
 
           {% if i_part_folder and i_part_folder != i_prev_part_folder and i_part_unnumbered == false %}
-            <li class="header {% if i_part_is_draft %}draft{% endif %}">
+            <li class="header 
+                {% if page.url == i_chapter.url %}active{% elsif i_part_is_draft %}draft{% endif %}">
               {% if i_chapter_is_part_index %}
                 <a href="{{ i_chapter.url | relative_url }}">
               {% endif %}
