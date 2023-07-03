@@ -14,26 +14,24 @@ layout: default
   <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
     <ul>
       {% assign book_url = site.bookcrumbs.book_url 
-          | default: '/index.html' 
-          | relative_url %}
+          | default: '/index.html' %}
       <li>
         {% unless book_url == page.url %}  
-          <a href="{{ book_url }}">
+          <a href="{{ book_url | relative_url }}">
         {% endunless %}
-        <img class="book-icon" src="{{ site.bookcrumbs.book_icon 
-            | default: '/assets/ddc/images/ddc.png' 
-            | relative_url }}"> Book
+            <img class="book-icon" src="{{ site.bookcrumbs.book_icon 
+                | default: '/assets/ddc/images/ddc.png' 
+                | relative_url }}"> Book
         {% unless book_url == page.url %}
           </a>
         {% endunless %}
       </li>
 
       {% assign contents_url = site.bookcrumbs.contents_url 
-          | default: '/contents.html' 
-          | relative_url %}
+          | default: '/contents.html' %}
       <li {% if contents_url == page.url %}class="no-arrow"{% endif %}>
         {% if contents_url != page.url %}
-          <a href="{{ contents_url }}">
+          <a href="{{ contents_url | relative_url }}">
         {% endif %}
           Contents
         {% if contents_url != page.url %}
