@@ -13,7 +13,7 @@ layout: default
 
   <nav aria-label="Breadcrumb" class="breadcrumb markdown-section">
     <ul>
-      {% if site.bookcrumbs.book_url == nil or site.bookcrumbs.book_url != '' %}
+      {% if site.bookcrumbs.book_url != false %}
         {% assign book_url = site.bookcrumbs.book_url | default: '/index.html' %}
       {% endif %}
       {% if book_url %}
@@ -30,7 +30,7 @@ layout: default
         </li>
       {% endif %}
 
-      {% if site.bookcrumbs.contents_url == nil or site.bookcrumbs.contents_url != '' %}
+      {% if site.bookcrumbs.contents_url != false %}
         {% assign contents_url = site.bookcrumbs.contents_url | default: '/contents.html' %}
       {% endif %}
       {% if contents_url %}
