@@ -20,6 +20,19 @@
     margin-top: 1em;
     margin-bottom: 1.5em;
 }
+
+section.markdown-section > div.chapter-abstract > :last-child {
+    margin-bottom: 0;
+}
+
+section.markdown-section > div.footnotes {
+    border-top: 1px solid #ccc;
+}
+
+section.markdown-section code {
+    padding: 0;
+}
+
 .book-body {
     position: relative;
     overflow: hidden;
