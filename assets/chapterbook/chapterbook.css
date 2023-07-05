@@ -1,10 +1,17 @@
+:root {
+    --ddc-yellow: #ffd007;
+    
+}
+
 * {
     -webkit-touch-callout: default;
 }
+
 .markdown-section .chapter-abstract + h2,
 .markdown-section .page-toc + h2 {
     margin-top: 0;
 }
+
 .markdown-section h1,
 .markdown-section h2,
 .markdown-section h3,
@@ -40,42 +47,35 @@ section.markdown-section code {
     min-height: 100%;
     /*scroll-behavior: smooth;*/
 }
+
 .book-body .body-inner {
     position: relative;
 }
+
 .book.with-summary .book-body {
     /*scroll-padding-top: 0;*/
     margin-left: 315px;
 }
+
 html {
     scroll-padding-top: 75px;
 }
+
 .book {
     overflow: visible;
 }
-/*
-.book {
-    scroll-padding-top: 75px;
-}
-*/
-.book.with-summary {
-    /*scroll-padding-top: 0;*/
-}
+
 .book.with-summary .book-body .body-inner {
     margin-top: 1em;
 }
-/* Override gitbook styles */
+
 @media (min-width: 600px) {
     .book.with-summary .book-body {
         left: 0;
     }
 }
+
 @media (max-width: 600px) {
-    /*
-    .book-summary {
-        width: 315px;
-    }
-    */
     .book.with-summary {
         overflow: visible;
     }
@@ -89,14 +89,13 @@ html {
         width: calc(100% + 315px);
     }
 }
+
 @media (max-width: 1240px) {
     .book-body .body-inner {
         position: relative;
     }
 
 }
-
-
 
 .book.with-summary .book-header {
     border-right: 1px solid rgb(0,0,0,.07);
