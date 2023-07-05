@@ -100,4 +100,4 @@
 *[YAGNI]: You Ain't Gonna Need It 
 *[YAML]: Yaml Ain't a Markup Language (originally, Yet Another Markup Language)
 *[yml]: 3-character variation of YAML, used as a file extension
-*[\*nix]: Any operating systems that may be reasonably described as "Unix-like"---including macOS and Linux variants
+*[*nix]: Any operating systems that may be reasonably described as "Unix-like"---including macOS and Linux variants
