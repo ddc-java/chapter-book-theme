@@ -82,12 +82,12 @@
 *[SDK]: Software Development Kit
 *[SOAP]: Simple Object Acces Protocol
 *[SoC]: Separation of Concerns 
-*[SOLID]: **S**ingle-responsibility principle, **O**pen-closed principle, **L**iskov substitution principle, **I**nterface segregation principle **D**ependency inversion principle
+*[SOLID]: Acronym for Single-responsibility principle, Open-closed principle, Liskov substitution principle, Interface segregation principle, Dependency inversion principle
 *[SQL]: Structured Query Language
 *[SSG]: SQL Style Guide
 *[SSL]: Secure Sockets Layer
 *[SVG]: Scalable Vector Graphics
-*[TAoCP]: _The Art of Computer Programming_, by Donald Knuth---the definitive reference work on computational algorithms
+*[TAoCP]: "The Art of Computer Programming", by Donald Knuth—the definitive reference work on computational algorithms
 *[TeX]: Typesetting system invented by Donald Knuth, used for formatting complex or technical content, such as mathematical formulas
 *[TOC]: Table of Contents
 *[VCS]: Version Control System
@@ -100,4 +100,4 @@
 *[YAGNI]: You Ain't Gonna Need It 
 *[YAML]: Yaml Ain't a Markup Language (originally, Yet Another Markup Language)
 *[yml]: 3-character variation of YAML, used as a file extension
-*[*nix]: Any operating systems that may be reasonably described as "Unix-like"---including macOS and Linux variants
+*[*nix]: Any operating systems that may be reasonably described as "Unix-like"—including macOS and Linux variants
