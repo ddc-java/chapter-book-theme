@@ -41,6 +41,10 @@ section.markdown-section code {
     padding: 0;
 }
 
+section.markdown-section abbr[title] {
+  border-bottom-style: none; 
+}
+
 .book-body {
     position: relative;
     overflow: hidden;
