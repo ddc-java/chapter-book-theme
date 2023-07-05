@@ -27,6 +27,7 @@ section.markdown-section > div.chapter-abstract > :last-child {
 
 section.markdown-section > div.footnotes {
     border-top: 1px solid #ccc;
+    padding-top: 0.85em;
 }
 
 section.markdown-section code {
