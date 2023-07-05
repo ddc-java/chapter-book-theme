@@ -104,7 +104,7 @@ layout: default
 
   {% if site.in_chapter_toc.enabled and page.disable_toc != true and page_chapter_is_part_index != true %}
     {% capture in_chapter_toc %}
-      {% include toc.html html=content h_min=site.sidebar_toc.h_min h_max=site.sidebar_toc.h_max %}{% endcapture %}
+      {% include toc.html html=content h_min=site.in_chapter_toc.h_min h_max=site.in_chapter_toc.h_max %}{% endcapture %}
     {% capture in_chapter_toc %}{{ in_chapter_toc | strip }}{% endcapture %}
 
     {% if in_chapter_toc and in_chapter_toc != "" %}
