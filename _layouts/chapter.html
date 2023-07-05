@@ -98,7 +98,7 @@ layout: default
 
   {% if page.abstract %}
     <div class="chapter-abstract color-callout-dark">
-      {{ page.abstract }}
+      {{ page.abstract | markdownify }}
     </div>
   {% endif %}
 
