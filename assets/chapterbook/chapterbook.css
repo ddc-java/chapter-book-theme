@@ -41,6 +41,12 @@ section.markdown-section code {
     padding: 0;
 }
 
+section.markdown-section code:before,
+section.markdown-section code:after {
+    padding: 0;
+    content: none;
+}
+
 section.markdown-section abbr[title] {
   border-bottom-style: none; 
 }
