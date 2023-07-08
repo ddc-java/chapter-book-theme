@@ -585,7 +585,7 @@ table.inspect-chapter-iterate-vars th.divider {
 }
 
 .book-summary > nav > ul.summary > li.header {
-    text-decoration: none;
+    text-transform: none;
     font-weight: bold;
 }
 
