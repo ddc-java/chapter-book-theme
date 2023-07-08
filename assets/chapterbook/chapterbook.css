@@ -584,9 +584,15 @@ table.inspect-chapter-iterate-vars th.divider {
     text-transform: uppercase;
 }
 
+.book-summary > nav > ul.summary > li.header {
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .book-summary ul.summary li.header a {
     padding: 0;
 }
+
 .part-index h1 {
     text-transform: uppercase;
 }
