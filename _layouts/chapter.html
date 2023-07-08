@@ -102,7 +102,13 @@ layout: default
     </div>
   {% endif %}
 
-  {% assign toc_enabled = page.in_chapter_toc.enabled | default: site.in_chapter_toc.enabled %}
+  {% if page.in_chapter_toc.enabled != nil %}
+    {% assign toc_enabled = page.in_chapter_toc.enabled %}
+  {% elsif page.in_chapter_toc.enabled != nil %}
+    {% assign toc_enabled = site.in_chapter_toc.enabled %}
+  {% else %}
+    {% assign toc_enabled = true %}
+  {% endif %}
   
   {% if toc_enabled and page.disable_toc != true and page_chapter_is_part_index != true %}
     {% assign min_heading = page.in_chapter_toc.h_min | default: site.in_chapter_toc.h_min | default: 1 %}
