@@ -7,7 +7,10 @@
         {% if site.sidebar_nav_top %}
           {% for item in site.sidebar_nav_top %}
             {% assign item_url = item.url | relative_url %}
-            <li class="chapter {% if item.url == page.url %}active{% endif %}">
+            <li class="chapter 
+                {% if item.url == page.url -%}
+                    active" id="active-chapter-nav-item
+                {%- endif %}">
               <a href="{{ item_url }}" class="">{{ item.label }}</a>
             </li>
           {% endfor %}
@@ -38,7 +41,11 @@
 
           {% if i_part_folder and i_part_folder != i_prev_part_folder and i_part_unnumbered == false %}
             <li class="header 
-                {% if page.url == i_chapter.url %}active{% elsif i_part_is_draft %}draft{% endif %}">
+                {% if page.url == i_chapter.url -%}
+                    active" id="active-chapter-nav-item
+                {%- elsif i_part_is_draft -%}
+                    draft
+                {%- endif %}">
               {% if i_chapter_is_part_index %}
                 <a href="{{ i_chapter.url | relative_url }}">
               {% endif %}
@@ -55,7 +62,7 @@
           {% endif %}
 
           {% if page.url == i_chapter.url %}
-            <li class="chapter active">
+            <li class="chapter active" id="active-chapter-nav-item">
           {% else %}
             <li class="chapter {%if i_chapter_is_draft %}draft{%endif%}">
           {% endif %}
@@ -80,7 +87,10 @@
         {% if site.sidebar_nav_bottom %}
           <li class="divider"></li>
           {% for item in site.sidebar_nav_bottom %}
-            <li class="chapter {% if item.url == page.url %}active{% endif %}">
+            <li class="chapter 
+                {% if item.url == page.url -%}
+                    active" id="active-chapter-nav-item
+                {%- endif %}">
               <a href="{{ item.url | relative_url }}" class="">{{ item.label }}</a>
             </li>
           {% endfor %}
@@ -89,5 +99,10 @@
       </ul>
     </nav>
   </div>
+  <script>
+    window.onload = function() {
+      document.getElementById("active-chapter-nav-item").scrollIntoView()
+    }
+  </script>
   {% endcapture %}
 {% endunless %}
