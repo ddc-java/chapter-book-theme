@@ -1,7 +1,7 @@
 <!--
 <script src="{{ '/assets/chapterbook/require.js' | relative_url }}"></script>
-<script src="{{ '/assets/chapterbook/jquery-3.6.0.min.js' | relative_url }}"></script>
 -->
+<script src="{{ '/assets/chapterbook/jquery-3.6.0.min.js' | relative_url }}"></script>
 
 <script src="{{ '/assets/gitbook/gitbook.js' | relative_url }}"></script>
 <script src="{{ '/assets/gitbook/theme.js' | relative_url }}"></script>
@@ -32,7 +32,7 @@
 -->
 
 {% if site.extra_footer_js %}
-  {%- for extra_js in site.extra_header_js -%}
+  {%- for extra_js in site.extra_footer_js -%}
     <script src="{{ extra_js | relative_url }}"></script>
   {%- endfor -%}
 {% endif %}
