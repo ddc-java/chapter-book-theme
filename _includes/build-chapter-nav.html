@@ -99,10 +99,10 @@
       </ul>
     </nav>
   </div>
-  <script>
-    window.onload = function() {
-      document.getElementById("active-chapter-nav-item").scrollIntoView()
-    }
+  <script>  
+    $(window).on("load", function() {
+      document.getElementById("active-chapter-nav-item").scrollIntoView();
+    });
   </script>
   {% endcapture %}
 {% endunless %}
